@@ -3,7 +3,7 @@ view: total_fact_count {
     sql: --  how many different customers/day combos they appear on.   How many individual sales.
       SELECT sum(orig_fact_count) num1, dbtype from rrinfo group by dbtype
       union all
-      SELECT sum(rowsloaded) num1, dbtype from loadmetrics group by dbtype
+      SELECT sum(rowsloaded) num1, dbtype from loadmetrics where operation_type = 'load' group by dbtype
       ;;
   }
 
