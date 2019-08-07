@@ -16,6 +16,10 @@ view: loadmetrics {
     sql: ${TABLE}.label ;;
   }
 
+  dimension: operation_type {
+    type: string
+    sql: ${TABLE}.operation_type ;;
+  }
   measure: count {
     type: count
     drill_fields: []
